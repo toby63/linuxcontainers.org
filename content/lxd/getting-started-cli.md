@@ -1,3 +1,24 @@
+# Content
+
+* [Installation](#installation)
+    * [Release Branches](#choose-your-release)
+    * [Getting the Packages](#getting-the-packages)
+        * Linux:
+            * [Alpine](#alpine-linux)
+            * [Arch](#arch-linux)
+            * [Fedora](#fedora)
+            * [Debian](#debian)
+            * [Gentoo](#gentoo)
+            * [OpenSuse](#opensuse)
+            * [Ubuntu](#ubuntu)
+            * [Snap-Package](#snap-package-arch-linux-debian-fedora-opensuse-and-ubuntu) 
+        * [MacOS](#macos-builds)
+        * [Windows](#windows-builds)
+        * [Build from Source](#installing-from-source)
+* [Initial Start & Configuration](#initial-configuration)
+* [Access Control](#access-control)
+
+------------------------------------------
 
 # Installation
 ## Choose your release
@@ -22,17 +43,25 @@ To install the feature branch of LXD, run:
 
     pacman -S lxd
 
-Alternatively, the snap package can also be used on Arch Linux (see below).
+Alternatively, the snap package can also be used on Arch Linux ([see below](#snap-package-arch-linux-debian-fedora-opensuse-and-ubuntu)).
 
 ### Fedora
 Instructions on how to use the COPR repository for LXD can be [found here](https://copr.fedorainfracloud.org/coprs/ganto/lxc3/).
 
-Alternatively, the snap package can also be used on Fedora (see below).
+Alternatively, the snap package can also be used on Fedora ([see below](#snap-package-arch-linux-debian-fedora-opensuse-and-ubuntu)).
+
+### Debian
+
+A snap package is available, [see below](#snap-package-arch-linux-debian-fedora-opensuse-and-ubuntu).
 
 ### Gentoo
 To install the feature branch of LXD, run:
 
     emerge --ask lxd
+    
+### Opensuse
+
+A snap package is available, [see below](#snap-package-arch-linux-debian-fedora-opensuse-and-ubuntu).
 
 ### Ubuntu
 #### Ubuntu (all releases)
@@ -79,11 +108,17 @@ The list of Linux distributions we currently test our snap for can be [found her
 
 For those distributions, you should first install snapd using [those instructions](https://snapcraft.io/docs/core/install).
 
-After that, you can install LXD with:
+After that, you can install LXD with:   
 
-    snap install lxd
+    snap install lxd      # this will install the feature release branch
 
-Alternatively, pass `--channel=4.0/stable` for the LXD 4.0 LTS release, `--channel=3.0/stable` for the LXD 3.0 LTS release or `--channel=2.0/stable` for the LXD 2.0 LTS release.
+If you want to install a different release, you can add a flag:
+
+Branch: | flag: |
+------- | ----- |
+LXD 4.0 LTS release | `--channel=4.0/stable` |                    
+LXD 3.0 LTS release | `--channel=3.0/stable` |
+LXD 2.0 LTS release | `--channel=2.0/stable` |
 
 ### MacOS builds
 LXD upstream publishes builds of the LXD client for macOS through [Homebrew](https://brew.sh/).
@@ -97,6 +132,8 @@ Native builds of the LXD client for Windows can be [found here](https://ci.appve
 
 ### Installing from source
 Instructions on building and installing LXD from source [can be found here](https://github.com/lxc/lxd/).
+
+--------------------------------------
 
 # Initial configuration
 Before you can create containers, you need to tell LXD a little bit about your storage and network needs.
